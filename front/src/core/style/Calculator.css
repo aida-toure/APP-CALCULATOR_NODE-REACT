@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "PlayFair";
+  src: url("../../../public/font/Playfair.ttf") format("ttf");
+}
+main {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: 9fr 1fr;
+}
+
+section#calculator {
+  margin: 15px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2fr 7fr;
+  grid-column: 2;
+  grid-row: 1/-1;
+  border: solid 3px rgb(69, 51, 64);
+  border-radius: 2px;
+  background: rgb(115, 81, 105);
+  box-shadow: 2px 2px rgb(69, 51, 64);
+}
+
+div#screen {
+  margin: 10px;
+  padding: 10px;
+  grid-column: auto;
+  grid-row: 1;
+  background: rgb(46, 46, 46);
+  color: white;
+  font-family: PlayFair, serif;
+}
+
+div#input {
+  margin: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-column: auto;
+  grid-row: 2;
+}
+
+button.buttons {
+  margin: 3px;
+  background: rgb(220, 180, 225);
+  box-shadow: 2px 2px rgb(69, 51, 64);
+  font-size: 20px;
+  font-family: PlayFair, serif;
+}
+
+section#response {
+  margin: 15px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 8fr 2fr;
+  grid-column: 1;
+  grid-row: 1/-1;
+  background: rgb(46, 46, 46);
+  border-radius: 2px;
+  border: 2px solid rgb(115, 81, 105);
+  box-shadow: 2px 2px rgb(69, 51, 64);
+}
+
+div#illustration {
+  grid-column: auto;
+  grid-row: 1;
+}
+
+div#output {
+  grid-column: auto;
+  grid-row: 2;
+  background: white;
+  border-radius: 2px;
+  margin: 20px;
+  color: black;
+  align-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=Calculator.css.map */

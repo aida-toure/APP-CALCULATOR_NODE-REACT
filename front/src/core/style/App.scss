@@ -1,0 +1,30 @@
+@import "Variables";
+// computer/laptop
+@media screen{
+  .App {
+    width: 100svw;
+    height: 100svh;
+  }
+  header{
+    width: 100%;
+    height: 10%;
+
+    background: $dark-mauve;
+  }
+  main{
+    width: 100%;
+    height: 80%;
+
+    background: $lightest-mauve;
+  }
+  footer{
+    width: 100%;
+    height: 10%;
+
+    background: $dark-mauve;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+}

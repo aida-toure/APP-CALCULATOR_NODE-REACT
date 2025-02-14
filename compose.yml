@@ -1,0 +1,22 @@
+services:
+  back:
+    build:
+      context: ./back
+    container_name: calculator_backend
+    working_dir: /back
+    volumes:
+      - ./back:/usr/src/app
+    ports:
+      - "8000:8000"
+    command: "npm start"
+  front:
+    build:
+      context: ./front
+    container_name: calculator_frontend
+    working_dir: /front
+    volumes:
+      - ./front:/usr/src/app
+    ports:
+      - "3001:3000"
+    command: "npm start"
+

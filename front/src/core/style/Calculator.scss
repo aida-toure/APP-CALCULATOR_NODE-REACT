@@ -1,0 +1,96 @@
+@import "Variables";
+main{
+  //display
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: 9fr 1fr;
+}
+//children of main
+  //calculator
+  section#calculator{
+    //marge and padding
+    margin: 15px;
+    //display
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 7fr;
+    //cell position : right
+    grid-column: 2;
+    grid-row: 1/-1;
+    //appearance
+    border: solid 3px $darkest-mauve;
+    border-radius: 2px;
+    background: $dark-mauve;
+    @include shadow-lvl1($darkest-mauve);
+  }
+    //children of mechanism
+    div#screen{
+      //margin and padding
+      margin : 10px;
+      padding: 10px;
+      //cell position : right
+      grid-column: auto;
+      grid-row: 1;
+      //appearance
+      background: $black-screen;
+      color: white;
+      font-family: PlayFair, serif ;
+    }
+    div#input{
+      //margin and padding
+      margin : 7px;
+      //display
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      //cell position : right
+      grid-column: auto;
+      grid-row: 2;
+
+    }
+      //children of input
+      button.buttons{
+        margin: 3px;
+        background: $light-mauve;
+        @include shadow-lvl1($darkest-mauve);
+        font-size: 20px;
+        font-family: PlayFair, serif ;
+      }
+  //response
+  section#response{
+    //marge and padding
+    margin: 15px;
+    // display
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 8fr 2fr;
+    //cell position : right
+    grid-column: 1;
+    grid-row: 1/-1;
+
+    background: $black-screen;
+    border-radius: 2px;
+    border: 2px solid $dark-mauve;
+    @include shadow-lvl1($darkest-mauve);
+  }
+    //children of response
+    //illustration
+    div#illustration{
+
+      //appearance
+      grid-column: auto;
+      grid-row: 1;
+    }
+    div#output{
+      grid-column: auto;
+      grid-row: 2;
+
+      //appearance
+      background: white;
+      border-radius: 2px;
+      margin: 20px;
+      color: black;
+      align-content: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
