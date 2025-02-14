@@ -2,7 +2,9 @@ import io from "socket.io-client"
 import '../style/Calculator.css'
 import {useEffect, useState} from "react";
 
-const socket = io("http://localhost:8000");
+const host = process.env.HOST || "localhost";
+const backPORT = process.env.PORT || 8000;
+const socket = io(`http://${host}:${backPORT}`);
 
 function Calculator() {
     const [buttons] = useState(["C", "( )","%", "÷", "7", "8","9","×", "4","5","6","-","1","2","3","+","+/-","0", ",", "⬅"]);

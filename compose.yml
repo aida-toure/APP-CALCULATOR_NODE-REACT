@@ -5,18 +5,23 @@ services:
     container_name: calculator_backend
     working_dir: /back
     volumes:
-      - ./back:/usr/src/app
+      - /mnt/c/Users/atgai/WebstormProjects/JS/calculator/back:/app/back:rw
+    environment:
+      HOST: "back"
+      PORT: 8000
     ports:
       - "8000:8000"
-    command: "npm start"
   front:
     build:
       context: ./front
     container_name: calculator_frontend
     working_dir: /front
     volumes:
-      - ./front:/usr/src/app
+      - /mnt/c/Users/atgai/WebstormProjects/JS/calculator/front:/app/front:rw
+    environment:
+      HOST : "front"
+      PORT : 3000
     ports:
-      - "3001:3000"
-    command: "npm start"
-
+      - "3000:3000"
+    depends_on:
+      - back
