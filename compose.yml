@@ -7,10 +7,12 @@ services:
     volumes:
       - /mnt/c/Users/atgai/WebstormProjects/JS/calculator/back:/app/back:rw
     environment:
-      HOST: "back"
-      PORT: 8000
+      - HOST=back
+      - PORT=8000
     ports:
       - "8000:8000"
+    networks:
+      - communication
   front:
     build:
       context: ./front
@@ -19,9 +21,13 @@ services:
     volumes:
       - /mnt/c/Users/atgai/WebstormProjects/JS/calculator/front:/app/front:rw
     environment:
-      HOST : "front"
-      PORT : 3000
+      - REACT_API_URL="http://back:8000"
     ports:
       - "3000:3000"
     depends_on:
       - back
+    networks:
+      - communication
+networks:
+  communication:
+    driver: bridge
